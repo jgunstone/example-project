@@ -5,7 +5,6 @@ on:
     branches:
       - main
 
-
 jobs:
   example_matrix:
     runs-on: ubuntu-latest
@@ -15,5 +14,5 @@ jobs:
         os: [ubuntu-latest, windows-latest]
     steps:
       - name: Show matrix combination
-        run: echo "Combination: ${{ matrix.version }}-${{ matrix.os }}"
+        run: echo ${{ matrix.version }}-${{ matrix.os }}
         if: ${{ matrix.version == 10 }}
