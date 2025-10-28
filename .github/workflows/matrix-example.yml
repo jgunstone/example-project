@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        env: [staging, production]
+        environment: [staging, production]
         what: [toolbox, jupyterlab, api, api-with-migration]
     steps:
       - name: Show matrix combination
-        run: echo pixi run deploy-${{ matrix.what }}-${{ matrix.env }}
-        if: ${{ matrix.env == staging }}
+        run: echo pixi run deploy-${{ matrix.what }}-${{ matrix.environment }}
+        if: ${{ matrix.environment == staging }}
