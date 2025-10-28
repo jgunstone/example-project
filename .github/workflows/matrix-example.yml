@@ -1,0 +1,19 @@
+name: Matrix Demo
+
+on:
+  push:
+    branches:
+      - main
+
+
+jobs:
+  example_matrix:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: [10, 12, 14]
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - name: Show matrix combination
+        run: echo "Combination: ${{ matrix.version }}-${{ matrix.os }}"
+        if: ${{ matrix.version == 10 }}
