@@ -15,4 +15,4 @@ jobs:
     steps:
       - name: Show matrix combination
         run: echo pixi run deploy-${{ matrix.what }}-${{ matrix.env }}
-        if: ${{ matrix.env == staging }}
+        if: ${{ matrix.env == "staging" }}
